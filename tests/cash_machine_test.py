@@ -4,9 +4,9 @@ from io import StringIO
 import pathlib
 import os
 
-from motion.source.cash_machine import CashMachine
-from motion.source.main import main
-import mock
+from source.cash_machine import CashMachine
+from source.main import main
+from unittest import mock
 
 
 class CashMachineTest(unittest.TestCase):
@@ -152,8 +152,8 @@ class MainTest(unittest.TestCase):
                 output[0], "The path specified does not exist or " "is not a file"
             )
 
-    @mock.patch("motion.source.main.exchange")
-    @mock.patch("motion.source.main.load")
+    @mock.patch("source.main.exchange")
+    @mock.patch("source.main.load")
     def test_correct_calls(self, load, exchange):
         working_dir = pathlib.Path().absolute()
         test_file = os.path.join(working_dir, "input.txt")

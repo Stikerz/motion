@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 
-from motion.source.cash_machine import CashMachine
+from source.cash_machine import CashMachine
 
 
 def load(instance: CashMachine, amount, coin) -> None:
